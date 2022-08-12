@@ -28,7 +28,7 @@ const { deploymentChains } = require("../../helper-hardhat-config");
         await playerConnectedNftMarketplace.buyItem(basicNft.address, TOKEN_ID);
         const newOwner = await basicNft.ownerOF(TOKEN_ID);
         const deployerProceeds = await nftMarktplace.getProceeds(deployer);
-        assert(newOwner.toString() == player);
-        assert(deployerProceeds.toString() == player);
+        assert(newOwner.toString() == player.address);
+        assert(deployerProceeds.toString() == PRICE.toString());
     })
 })
